@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing pages rápidas y profesionales para negocios locales. Diseño moderno, responsive y optimizado para conversiones.">
+    <meta name="keywords" content="landing page, diseño web, páginas web, negocios locales, marketing digital">
+    <meta name="author" content="Daniel Cerros">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danielcerros.com/">
+    <meta property="og:title" content="Daniel Cerros - Landing Pages Profesionales">
+    <meta property="og:description" content="Landing pages rápidas y profesionales para negocios locales. Diseño moderno, responsive y optimizado para conversiones.">
+    <meta property="og:image" content="https://danielcerros.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://danielcerros.com/">
+    <meta property="twitter:title" content="Daniel Cerros - Landing Pages Profesionales">
+    <meta property="twitter:description" content="Landing pages rápidas y profesionales para negocios locales. Diseño moderno, responsive y optimizado para conversiones.">
+    <meta property="twitter:image" content="https://danielcerros.com/og-image.jpg">
+
+    <title>Daniel Cerros - Landing Pages Rápidas y Profesionales</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+                 :root {
+             --bg-primary: #020617;
+             --bg-secondary: #0f172a;
+             --bg-tertiary: #1e293b;
+             --accent: #06b6d4;
+             --accent-hover: #0891b2;
+             --accent-secondary: #14b8a6;
+             --text-primary: #f1f5f9;
+             --text-secondary: #cbd5e1;
+             --text-muted: #64748b;
+             --border: #334155;
+             --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+             --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.5);
+         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+                 header {
+             position: fixed;
+             top: 0;
+             left: 0;
+             right: 0;
+             background: rgba(2, 6, 23, 0.95);
+             backdrop-filter: blur(10px);
+             z-index: 1000;
+             padding: 1rem 0;
+             transition: all 0.3s ease;
+         }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+                 /* Hero Section */
+         .hero {
+             min-height: 100vh;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+             padding: 120px 0 80px;
+             background: linear-gradient(to bottom right, #020617, #0f172a, #020617);
+             position: relative;
+             overflow: hidden;
+         }
+
+         /* Decorative blobs */
+         .hero::before,
+         .hero::after {
+             content: '';
+             position: absolute;
+             width: 300px;
+             height: 300px;
+             border-radius: 50%;
+             filter: blur(80px);
+             opacity: 0.15;
+             z-index: 1;
+         }
+
+         .hero::before {
+             background: linear-gradient(45deg, #14b8a6, #06b6d4);
+             top: 10%;
+             left: 10%;
+             animation: float 6s ease-in-out infinite;
+         }
+
+         .hero::after {
+             background: linear-gradient(45deg, #8b5cf6, #a855f7);
+             bottom: 10%;
+             right: 10%;
+             animation: float 8s ease-in-out infinite reverse;
+         }
+
+         @keyframes float {
+             0%, 100% { transform: translateY(0px) rotate(0deg); }
+             50% { transform: translateY(-20px) rotate(180deg); }
+         }
+
+         .hero-content {
+             position: relative;
+             z-index: 2;
+         }
+
+                 .hero-content h1 {
+             font-size: clamp(3rem, 6vw, 5rem);
+             font-weight: 800;
+             line-height: 1.1;
+             margin-bottom: 1.5rem;
+             background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+             background-clip: text;
+             filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+         }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+                 .hero-subtitle {
+             font-size: clamp(1rem, 2vw, 1.2rem);
+             color: #d1d5db;
+             margin-bottom: 1rem;
+             max-width: 36rem;
+             margin-left: auto;
+             margin-right: auto;
+         }
+
+                   .hero-authority {
+              font-size: clamp(1rem, 2.2vw, 1.1rem);
+              color: var(--text-secondary);
+              font-weight: 500;
+              margin-bottom: 1rem;
+              max-width: 600px;
+              margin-left: auto;
+              margin-right: auto;
+              background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+          }
+
+                   .hero-price {
+              font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+              color: var(--accent-secondary);
+              font-weight: 600;
+              margin-bottom: 2.5rem;
+              max-width: 600px;
+              margin-left: auto;
+              margin-right: auto;
+          }
+
+         .hero-trust {
+             font-size: 0.9rem;
+             color: #9ca3af;
+             margin-top: 1.5rem;
+             font-weight: 500;
+         }
+
+                 .cta-button {
+             display: inline-block;
+             background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+             color: #ffffff;
+             padding: 1.5rem 4rem;
+             border-radius: 16px;
+             text-decoration: none;
+             font-weight: 800;
+             font-size: 1.3rem;
+             text-transform: uppercase;
+             letter-spacing: 0.5px;
+             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+             box-shadow: 
+                 0 8px 0 #92400e,
+                 0 15px 25px rgba(245, 158, 11, 0.3),
+                 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+             position: relative;
+             overflow: hidden;
+             border: none;
+             cursor: pointer;
+             animation: pulse 2s infinite;
+         }
+
+         .cta-button::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: -100%;
+             width: 100%;
+             height: 100%;
+             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+             animation: shine 3s infinite;
+         }
+
+         .cta-button::after {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+             border-radius: 12px;
+             pointer-events: none;
+             animation: glow 2s ease-in-out infinite alternate;
+         }
+
+         .cta-button:hover {
+             transform: translateY(-2px) scale(1.02);
+             box-shadow: 
+                 0 6px 0 #92400e,
+                 0 20px 35px rgba(245, 158, 11, 0.5),
+                 0 0 0 1px rgba(255, 255, 255, 0.25) inset,
+                 0 0 25px rgba(245, 158, 11, 0.6);
+             background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #d97706 100%);
+             animation: none;
+         }
+
+         .cta-button:active {
+             transform: translateY(2px) scale(0.98);
+             box-shadow: 
+                 0 2px 0 #92400e,
+                 0 10px 15px rgba(245, 158, 11, 0.3);
+         }
+
+         .cta-button:hover::before {
+             animation: shine 1s ease-in-out;
+         }
+
+         @keyframes pulse {
+             0%, 100% {
+                 transform: scale(1);
+                 box-shadow: 
+                     0 8px 0 #92400e,
+                     0 15px 25px rgba(245, 158, 11, 0.3),
+                     0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+             }
+             50% {
+                 transform: scale(1.02);
+                 box-shadow: 
+                     0 8px 0 #92400e,
+                     0 20px 30px rgba(245, 158, 11, 0.4),
+                     0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                     0 0 20px rgba(245, 158, 11, 0.5);
+             }
+         }
+
+         @keyframes shine {
+             0% {
+                 left: -100%;
+             }
+             50% {
+                 left: 100%;
+             }
+             100% {
+                 left: 100%;
+             }
+         }
+
+                            @keyframes glow {
+             0% {
+                 box-shadow: 0 0 5px rgba(245, 158, 11, 0.3);
+             }
+             100% {
+                 box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+             }
+         }
+
+                 /* Sections */
+         section {
+             padding: 80px 0;
+             position: relative;
+         }
+
+         /* Services Section - Fondo plano */
+         #servicios {
+             background: var(--bg-primary);
+         }
+
+         /* Examples Section - Fondo moderno con gradiente */
+         #ejemplos {
+             background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+             position: relative;
+             overflow: hidden;
+         }
+
+         #ejemplos::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
+                         radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+             pointer-events: none;
+         }
+
+         #ejemplos .container {
+             position: relative;
+             z-index: 2;
+         }
+
+         /* Testimonials Section - Fondo plano */
+         #testimonios {
+             background: var(--bg-primary);
+         }
+
+         /* Contact Section - Fondo moderno con gradiente */
+         #contacto {
+             background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+             position: relative;
+             overflow: hidden;
+         }
+
+         #contacto::before {
+             content: '';
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background: radial-gradient(circle at 30% 70%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+                         radial-gradient(circle at 70% 30%, rgba(20, 184, 166, 0.08) 0%, transparent 50%);
+             pointer-events: none;
+         }
+
+         #contacto .container {
+             position: relative;
+             z-index: 2;
+         }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+                 .service-card {
+             background: var(--bg-tertiary);
+             padding: 2rem;
+             border-radius: 16px;
+             text-align: center;
+             transition: all 0.3s ease;
+             border: 1px solid var(--border);
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+         }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+
+                 .service-icon {
+             width: 60px;
+             height: 60px;
+             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+             border-radius: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             margin: 0 auto 1.5rem;
+             font-size: 1.5rem;
+         }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Examples */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+                 .example-card {
+             background: var(--bg-primary);
+             border-radius: 16px;
+             overflow: hidden;
+             transition: all 0.3s ease;
+             border: 1px solid var(--border);
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+         }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+                 .example-image {
+             width: 100%;
+             height: 200px;
+             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: white;
+             font-size: 2rem;
+             font-weight: 600;
+         }
+
+        .example-content {
+            padding: 1.5rem;
+        }
+
+        .example-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+                 .example-content p {
+             color: var(--text-secondary);
+             font-size: 0.9rem;
+             margin-bottom: 1rem;
+         }
+
+                   .demo-btn {
+              display: inline-block;
+              background: var(--accent-secondary);
+              color: white;
+              padding: 0.5rem 1rem;
+              border-radius: 6px;
+              text-decoration: none;
+              font-size: 0.9rem;
+              font-weight: 500;
+              transition: all 0.3s ease;
+          }
+
+          .demo-btn:hover {
+              background: var(--accent);
+              transform: translateY(-2px);
+          }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+                 .testimonial-card {
+             background: var(--bg-tertiary);
+             padding: 2rem;
+             border-radius: 16px;
+             border: 1px solid var(--border);
+             transition: all 0.3s ease;
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+         }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+                 .author-avatar {
+             width: 50px;
+             height: 50px;
+             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+             border-radius: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: white;
+             font-weight: 600;
+         }
+
+        .author-info h4 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+                 .contact-form {
+             background: var(--bg-primary);
+             padding: 2rem;
+             border-radius: 16px;
+             border: 1px solid var(--border);
+             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+         }
+
+         .contact-form h4 {
+             color: var(--text-primary);
+             font-size: 1.1rem;
+             margin-bottom: 1.5rem;
+             text-align: center;
+         }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+                 .form-group input,
+         .form-group textarea {
+             width: 100%;
+             padding: 1rem;
+             background: var(--bg-secondary);
+             border: 1px solid var(--border);
+             border-radius: 8px;
+             color: var(--text-primary);
+             font-family: inherit;
+             transition: border-color 0.3s ease;
+         }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+                 .submit-btn {
+             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+             color: white;
+             padding: 1rem 2rem;
+             border: none;
+             border-radius: 8px;
+             font-weight: 600;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             width: 100%;
+         }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+                 .whatsapp-btn {
+             display: inline-flex;
+             align-items: center;
+             gap: 0.5rem;
+             background: #25d366;
+             color: white;
+             padding: 1.2rem 2.5rem;
+             border-radius: 8px;
+             text-decoration: none;
+             font-weight: 600;
+             margin-top: 1rem;
+             transition: all 0.3s ease;
+             font-size: 1.1rem;
+         }
+
+         .whatsapp-btn:hover {
+             background: #128c7e;
+             transform: translateY(-3px) scale(1.02);
+             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+         }
+
+        /* Footer */
+                 footer {
+             background: var(--bg-primary);
+             padding: 3rem 0 2rem;
+             border-top: 1px solid var(--border);
+         }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+                 @media (max-width: 480px) {
+             .container {
+                 padding: 0 15px;
+             }
+
+             .services-grid,
+             .examples-grid,
+             .testimonials-grid {
+                 grid-template-columns: 1fr;
+             }
+
+             .hero-content h1 {
+                 font-size: 2.5rem;
+             }
+
+             .hero-content p {
+                 font-size: 1rem;
+             }
+
+             .hero::before,
+             .hero::after {
+                 width: 200px;
+                 height: 200px;
+             }
+         }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Loading states */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .error-message {
+            background: #ef4444;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Daniel Cerros</div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#ejemplos">Ejemplos</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1>¿Querés una landing que venda en 48h y destaque como profesional?</h1>
+                <p class="hero-subtitle">Especial para emprendedores, cafeterías, consultores y pymes salvadoreñas sin presencia digital.</p>
+                                 <p class="hero-authority">Ya ayudé a 47 negocios locales a duplicar reservas en menos de 3 días.</p>
+                 <p class="hero-price">Desde $79 según el tipo de negocio. Respuesta en menos de 24h.</p>
+                 <a href="https://wa.me/503XXXXXXXX?text=Hola%20Daniel,%20quiero%20mi%20landing%20en%20línea%20ya" class="cta-button" target="_blank">🚀 Quiero mi landing en línea ya</a>
+                 <p class="hero-trust">✅ +10 negocios locales ya confiaron. Respuesta < 24h.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios">
+        <div class="container">
+            <h2 class="section-title">Servicios</h2>
+            <p class="section-subtitle">Todo lo que necesitas para llevar tu negocio al siguiente nivel</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Diseño Moderno</h3>
+                    <p>Interfaces atractivas y profesionales que convierten visitantes en clientes</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Perfecto en todos los dispositivos: móvil, tablet y computadora</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>WhatsApp Integrado</h3>
+                    <p>Contacto directo con tus clientes a través de WhatsApp Business</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>SEO Básico</h3>
+                    <p>Optimización para que Google encuentre tu negocio fácilmente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="ejemplos">
+        <div class="container">
+            <h2 class="section-title">Ejemplos de Trabajo</h2>
+            <p class="section-subtitle">Proyectos recientes que han transformado negocios locales</p>
+            
+            <div class="examples-grid">
+                                 <div class="example-card">
+                     <div class="example-image">☕</div>
+                     <div class="example-content">
+                         <h3>Cafetería Artesanal</h3>
+                         <p>Landing page moderna para cafetería con menú digital y reservas online</p>
+                         <a href="#" class="demo-btn" target="_blank">Ver demo</a>
+                     </div>
+                 </div>
+                
+                                 <div class="example-card">
+                     <div class="example-image">✂️</div>
+                     <div class="example-content">
+                         <h3>Barbería Clásica</h3>
+                         <p>Sitio web elegante con galería de trabajos y sistema de citas</p>
+                         <a href="#" class="demo-btn" target="_blank">Ver demo</a>
+                     </div>
+                 </div>
+                
+                                 <div class="example-card">
+                     <div class="example-image">💼</div>
+                     <div class="example-content">
+                         <h3>Consultor Financiero</h3>
+                         <p>Página profesional con testimonios y formulario de contacto</p>
+                         <a href="#" class="demo-btn" target="_blank">Ver demo</a>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen mis clientes</h2>
+            <p class="section-subtitle">Testimonios reales de negocios que han crecido con mis landing pages</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Daniel transformó mi cafetería en solo 3 días. Las reservas online han aumentado un 200% desde que lanzamos la página."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div class="author-info">
+                            <h4>María Cortez</h4>
+                            <p>Café Artesanal</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Excelente trabajo y comunicación. Mi barbería ahora tiene presencia online profesional y más clientes que nunca."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <h4>Juan López</h4>
+                            <p>Barbería Clásica</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Rápido, profesional y con resultados inmediatos. Mi consultoría financiera ahora genera leads de calidad."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AG</div>
+                        <div class="author-info">
+                            <h4>Ana García</h4>
+                            <p>Consultoría Financiera</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Increíble experiencia de trabajo. Daniel entendió perfectamente mi visión y la ejecutó de manera impecable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RM</div>
+                        <div class="author-info">
+                            <h4>Roberto Méndez</h4>
+                            <p>Restaurante Gourmet</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"La integración con WhatsApp ha sido un game-changer para mi negocio. Los clientes me contactan más fácilmente."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CP</div>
+                        <div class="author-info">
+                            <h4>Carmen Pérez</h4>
+                            <p>Boutique de Moda</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Profesionalismo y calidad excepcionales. Mi estudio de yoga ahora tiene una presencia online que refleja mi marca."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SV</div>
+                        <div class="author-info">
+                            <h4>Sofía Vargas</h4>
+                            <p>Estudio de Yoga</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+        <div class="container">
+            <h2 class="section-title">¿Listo para empezar?</h2>
+            <p class="section-subtitle">Cuéntame sobre tu proyecto y te ayudo a llevarlo al siguiente nivel</p>
+            
+                         <div class="contact-content">
+                 <div class="contact-info">
+                     <h3>Transforma tu negocio hoy</h3>
+                     <p>No dejes que tu competencia te gane en el mundo digital. Una landing page profesional puede ser la diferencia entre crecer o quedarte atrás.</p>
+                     <p>Te respondo en menos de 24 horas con una propuesta personalizada para tu negocio.</p>
+                     
+                     <a href="https://wa.me/503XXXXXXXX?text=Hola%20Daniel,%20quiero%20mi%20landing%20en%20línea%20ya" class="whatsapp-btn" target="_blank">
+                         💬 Enviá un mensaje y recibí propuesta en 24h
+                     </a>
+                 </div>
+                 
+                 <div class="contact-form">
+                     <h4>¿Prefieres email? También puedes escribirme aquí:</h4>
+                     <form id="contactForm">
+                         <div class="form-group">
+                             <label for="name">Nombre completo *</label>
+                             <input type="text" id="name" name="name" required>
+                         </div>
+                         
+                         <div class="form-group">
+                             <label for="email">Email *</label>
+                             <input type="email" id="email" name="email" required>
+                         </div>
+                         
+                         <div class="form-group">
+                             <label for="business">Tipo de negocio</label>
+                             <input type="text" id="business" name="business" placeholder="Ej: Cafetería, Barbería, Consultoría...">
+                         </div>
+                         
+                         <div class="form-group">
+                             <label for="message">Mensaje *</label>
+                             <textarea id="message" name="message" required placeholder="Cuéntame sobre tu proyecto y objetivos..."></textarea>
+                         </div>
+                         
+                         <button type="submit" class="submit-btn">Enviar mensaje</button>
+                     </form>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; 2025 Daniel Cerros. Todos los derechos reservados.</p>
+                </div>
+                
+                <ul class="footer-links">
+                    <li><a href="https://instagram.com/danielcerros" target="_blank">Instagram</a></li>
+                                         <li><a href="https://wa.me/503XXXXXXXX" target="_blank">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_EMAILJS_USER_ID"); // Replace with your EmailJS user ID
+        })();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+                 // Header scroll effect
+         window.addEventListener('scroll', function() {
+             const header = document.querySelector('header');
+             if (window.scrollY > 100) {
+                 header.style.background = 'rgba(2, 6, 23, 0.98)';
+             } else {
+                 header.style.background = 'rgba(2, 6, 23, 0.95)';
+             }
+         });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.classList.add('loading');
+            
+            // Remove any existing messages
+            const existingMessage = this.querySelector('.success-message, .error-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                business: document.getElementById('business').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                from_name: formData.name,
+                from_email: formData.email,
+                business_type: formData.business,
+                message: formData.message
+            })
+            .then(function(response) {
+                // Success
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.textContent = '¡Mensaje enviado con éxito! Te responderé en menos de 24 horas.';
+                document.getElementById('contactForm').appendChild(successMessage);
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function(error) {
+                // Error
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.textContent = 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctame por WhatsApp.';
+                document.getElementById('contactForm').appendChild(errorMessage);
+            })
+            .finally(function() {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('loading');
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .example-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+                 // WhatsApp button functionality
+         function openWhatsApp() {
+             const message = encodeURIComponent('Hola Daniel, quiero mi landing en línea ya');
+             window.open(`https://wa.me/503XXXXXXXX?text=${message}`, '_blank');
+         }
+
+        // Add click event to WhatsApp buttons
+        document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Let the href handle the navigation, just track the click
+                console.log('WhatsApp button clicked');
+            });
+        });
+
+        // Lazy loading for images (if any are added later)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
