@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Soluciones digitales para clínicas en El Salvador. Landing pages y sistemas de reservas listos en 48-72 horas.">
-    <meta name="keywords" content="clínicas dentales, clínicas médicas, landing page, sistema de reservas, El Salvador">
+    <meta name="description" content="Daniel Cerros - FullStack Developer specializing in modern web applications, digital solutions, and innovative technology implementations.">
+    <meta name="keywords" content="FullStack Developer, Web Development, JavaScript, React, Node.js, Daniel Cerros, Portfolio, Software Engineer">
     <meta name="author" content="Daniel Cerros">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://danielcerros.com/clinicas">
-    <meta property="og:title" content="Soluciones Digitales para Clínicas - Daniel Cerros">
-    <meta property="og:description" content="Landing pages y sistemas de reservas para clínicas dentales y médicas en El Salvador.">
-    <meta property="og:image" content="https://danielcerros.com/clinicas-og.jpg">
+    <meta property="og:url" content="https://danielcerros.com">
+    <meta property="og:title" content="Daniel Cerros - FullStack Developer Portfolio">
+    <meta property="og:description" content="Experienced FullStack Developer creating innovative digital solutions and modern web applications.">
+    <meta property="og:image" content="https://danielcerros.com/portfolio-og.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://danielcerros.com/clinicas">
-    <meta property="twitter:title" content="Soluciones Digitales para Clínicas - Daniel Cerros">
-    <meta property="twitter:description" content="Landing pages y sistemas de reservas para clínicas dentales y médicas en El Salvador.">
-    <meta property="twitter:image" content="https://danielcerros.com/clinicas-og.jpg">
+    <meta property="twitter:url" content="https://danielcerros.com">
+    <meta property="twitter:title" content="Daniel Cerros - FullStack Developer Portfolio">
+    <meta property="twitter:description" content="Experienced FullStack Developer creating innovative digital solutions and modern web applications.">
+    <meta property="twitter:image" content="https://danielcerros.com/portfolio-og.jpg">
 
-    <title>Soluciones Digitales para Clínicas - Daniel Cerros</title>
+    <title>Daniel Cerros - FullStack Developer Portfolio</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,18 +36,23 @@
         }
 
         :root {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --bg-tertiary: #f1f5f9;
-            --accent: #0ea5e9;
-            --accent-hover: #0284c7;
-            --accent-secondary: #0369a1;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #1e1e1e;
+            --accent: #00d4ff;
+            --accent-hover: #00b8e6;
+            --accent-secondary: #0099cc;
+            --accent-glow: rgba(0, 212, 255, 0.3);
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #808080;
+            --text-accent: #00d4ff;
+            --border: #333333;
+            --border-accent: #00d4ff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 8px 30px rgba(0, 212, 255, 0.2);
+            --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
         body {
@@ -70,8 +75,8 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 100;
             padding: 1rem 0;
@@ -98,12 +103,12 @@
             justify-content: center;
             text-align: center;
             padding: 120px 0 80px;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #1a1a1a 100%);
             position: relative;
             overflow: hidden;
         }
 
-        /* Medical-themed background elements */
+        /* Tech-themed background elements */
         .hero::before {
             content: '';
             position: absolute;
@@ -112,8 +117,27 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(3, 105, 161, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, var(--accent-glow) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 153, 204, 0.1) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 212, 255, 0.03) 2px,
+                    rgba(0, 212, 255, 0.03) 4px
+                );
             pointer-events: none;
         }
 
@@ -124,15 +148,16 @@
         }
 
         .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: var(--text-primary);
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #ffffff 50%, var(--accent-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px var(--accent-glow);
         }
 
         .hero-content p {
@@ -166,18 +191,19 @@
 
         .cta-primary {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
-            color: white;
-            box-shadow: var(--shadow);
+            color: var(--bg-primary);
+            box-shadow: var(--shadow-glow);
+            border: 1px solid var(--accent);
         }
 
         .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
             background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
         }
 
         .cta-secondary {
-            background: white;
+            background: transparent;
             color: var(--accent);
             border-color: var(--accent);
             box-shadow: var(--shadow);
@@ -185,9 +211,9 @@
 
         .cta-secondary:hover {
             background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
         }
 
         /* Packages Section */
@@ -223,7 +249,7 @@
         }
 
         .package-card {
-            background: white;
+            background: var(--bg-card);
             border-radius: 16px;
             padding: 2rem;
             box-shadow: var(--shadow);
@@ -260,7 +286,7 @@
 
         .package-card:hover {
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: var(--shadow-glow);
             border-color: var(--accent);
         }
 
@@ -318,7 +344,7 @@
             width: 100%;
             padding: 1rem;
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
-            color: white;
+            color: var(--bg-primary);
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -334,7 +360,7 @@
 
         .package-cta:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--shadow-glow);
             background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
         }
 
@@ -366,10 +392,11 @@
 
         /* Footer */
         footer {
-            background: var(--text-primary);
-            color: white;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
             padding: 2rem 0;
             text-align: center;
+            border-top: 1px solid var(--border);
         }
 
         .footer-content {
@@ -387,7 +414,7 @@
         }
 
         .footer-links a {
-            color: #cbd5e1;
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -469,11 +496,80 @@
             animation: fadeInUp 0.6s ease-out;
         }
 
-        /* Medical icons */
+        /* Tech icons */
         .medical-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
             opacity: 0.8;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--bg-primary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .skill-item h4 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin: 0;
+        }
+
+        /* Responsive About */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -491,131 +587,175 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content fade-in-up">
-                <div class="medical-icon">🏥</div>
-                <h1>Soluciones digitales para clínicas en El Salvador</h1>
-                <p>Landing pages y sistemas de reservas listos en 48–72 horas. Integro WhatsApp, agenda online y recordatorios para que no pierda más pacientes.</p>
+                <div class="medical-icon">💻</div>
+                <h1>Daniel Cerros</h1>
+                <h2 style="font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; color: var(--accent); margin-bottom: 1rem;">FullStack Developer</h2>
+                <p>Passionate about creating innovative digital solutions and modern web applications. Specializing in full-stack development with cutting-edge technologies and user-centered design.</p>
                 
                 <div class="hero-buttons">
-                    <a href="https://calendly.com/cerros384" class="cta-button cta-primary" target="_blank">
-                        📅 Agendar videollamada gratuita
+                    <a href="#projects" class="cta-button cta-primary">
+                        🚀 View My Projects
                     </a>
-                    <a href="https://wa.me/50378880769?text=Hola%20Daniel,%20quiero%20saber%20más%20sobre%20las%20soluciones%20para%20mi%20clínica" class="cta-button cta-secondary" target="_blank">
-                        💬 Escribirme por WhatsApp
+                    <a href="#contact" class="cta-button cta-secondary">
+                        💬 Get In Touch
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section class="packages">
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm a passionate FullStack Developer with expertise in modern web technologies and a strong focus on creating scalable, user-centered applications. With years of experience in both frontend and backend development, I bring ideas to life through clean code and innovative solutions.</p>
+                    <p>My approach combines technical excellence with creative problem-solving, ensuring that every project not only meets requirements but exceeds expectations. I'm committed to staying current with the latest technologies and best practices in the ever-evolving world of web development.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>Frontend</h4>
+                        <p>React, Vue.js, Angular</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Backend</h4>
+                        <p>Node.js, Express, Python</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Database</h4>
+                        <p>MongoDB, PostgreSQL</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Cloud</h4>
+                        <p>AWS, Docker, DevOps</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Mobile</h4>
+                        <p>React Native, Flutter</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Tools</h4>
+                        <p>Git, CI/CD, Testing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="packages" id="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Paquetes para clínicas</h2>
-                <p class="section-subtitle">Soluciones completas para modernizar su clínica y mejorar la experiencia de sus pacientes</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing innovative solutions and cutting-edge web applications that demonstrate technical expertise and creative problem-solving</p>
             </div>
             
             <div class="packages-grid">
-                <!-- Paquete 1 -->
+                <!-- Project 1 -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3 class="package-name">Presencia Web</h3>
-                        <div class="package-price">$199 <small>USD</small></div>
+                        <h3 class="package-name">E-Commerce Platform</h3>
+                        <div class="package-price">React <small>+ Node.js</small></div>
                     </div>
                     
                     <ul class="package-features">
-                        <li>Landing 1–3 secciones con servicios y ubicación</li>
-                        <li>Contacto directo a WhatsApp</li>
-                        <li>Optimización básica para Google</li>
-                        <li>Hosting incluido por 1 año</li>
+                        <li>Full-stack e-commerce solution</li>
+                        <li>Payment integration (Stripe)</li>
+                        <li>Real-time inventory management</li>
+                        <li>Admin dashboard with analytics</li>
+                        <li>Responsive design & mobile-first</li>
                     </ul>
                     
-                    <a href="https://wa.me/50378880769?text=Hola%20Daniel,%20quiero%20el%20Paquete%20Presencia%20Web%20de%20$199" class="package-cta" target="_blank">
-                        Elegir este plan
+                    <a href="#contact" class="package-cta">
+                        View Details
                     </a>
                 </div>
 
-                <!-- Paquete 2 -->
+                <!-- Project 2 -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3 class="package-name">Web + Agenda</h3>
-                        <div class="package-price">$299 <small>USD</small></div>
+                        <h3 class="package-name">Healthcare Management System</h3>
+                        <div class="package-price">Vue.js <small>+ Express</small></div>
                     </div>
                     
                     <ul class="package-features">
-                        <li>Todo lo del Paquete 1</li>
-                        <li>Agenda online integrada</li>
-                        <li>Confirmación automática al paciente</li>
-                        <li>Notificación directa a WhatsApp</li>
+                        <li>Patient appointment scheduling</li>
+                        <li>Medical records management</li>
+                        <li>WhatsApp integration for notifications</li>
+                        <li>Automated reminder system</li>
+                        <li>HIPAA compliant architecture</li>
                     </ul>
                     
-                    <a href="https://wa.me/50378880769?text=Hola%20Daniel,%20quiero%20el%20Paquete%20Web%20%2B%20Agenda%20de%20$299" class="package-cta" target="_blank">
-                        Elegir este plan
+                    <a href="#contact" class="package-cta">
+                        View Details
                     </a>
                 </div>
 
-                                 <!-- Paquete 3 -->
-                 <div class="package-card">
-                     <div class="package-header">
-                         <h3 class="package-name">Web + Agenda + Recordatorios</h3>
-                         <div class="package-price">$399 <small>USD</small></div>
-                     </div>
-                     
-                     <ul class="package-features">
-                         <li>Todo lo del Paquete 2</li>
-                         <li>Recordatorios automáticos (WhatsApp/email)</li>
-                         <li>Reducción de ausencias</li>
-                         <li>Soporte prioritario</li>
-                     </ul>
-                     
-                     <a href="https://wa.me/50378880769?text=Hola%20Daniel,%20quiero%20el%20Paquete%20Completo%20de%20$399" class="package-cta" target="_blank">
-                         Elegir este plan
-                     </a>
-                 </div>
+                <!-- Project 3 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Real-Time Chat Application</h3>
+                        <div class="package-price">Socket.io <small>+ MongoDB</small></div>
+                    </div>
+                    
+                    <ul class="package-features">
+                        <li>Real-time messaging system</li>
+                        <li>Group chat functionality</li>
+                        <li>File sharing capabilities</li>
+                        <li>Message encryption & security</li>
+                        <li>Scalable microservices architecture</li>
+                    </ul>
+                    
+                    <a href="#contact" class="package-cta">
+                        View Details
+                    </a>
+                </div>
 
-                 <!-- Paquete 4 - Consulta Personalizada -->
-                 <div class="package-card">
-                     <div class="package-header">
-                         <h3 class="package-name">¿Tiene algo diferente en mente?</h3>
-                         <div class="package-price">Consulta <small>Personalizada</small></div>
-                     </div>
-                     
-                     <ul class="package-features">
-                         <li>Análisis detallado de sus necesidades</li>
-                         <li>Propuesta personalizada a medida</li>
-                         <li>Integración con sistemas existentes</li>
-                         <li>Solución única para su clínica</li>
-                     </ul>
-                     
-                     <a href="https://calendly.com/cerros384" class="package-cta" target="_blank">
-                         Agendar videollamada
-                     </a>
-                 </div>
+                <!-- Project 4 -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-name">Custom Solutions</h3>
+                        <div class="package-price">Tailored <small>Development</small></div>
+                    </div>
+                    
+                    <ul class="package-features">
+                        <li>Bespoke web applications</li>
+                        <li>API development & integration</li>
+                        <li>Database design & optimization</li>
+                        <li>Cloud deployment & DevOps</li>
+                        <li>Ongoing maintenance & support</li>
+                    </ul>
+                    
+                    <a href="#contact" class="package-cta">
+                        Discuss Project
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/50378880769?text=Hola%20Daniel,%20quiero%20saber%20más%20sobre%20las%20soluciones%20para%20mi%20clínica" class="floating-whatsapp" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
-            <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path>
-            <path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path>
-            <path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path>
-            <path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path>
-            <path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+    <!-- Floating Contact Button -->
+    <a href="#contact" class="floating-whatsapp" id="contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
     </a>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="copyright">
-                    <p>&copy; 2025 Daniel Cerros. Todos los derechos reservados.</p>
+                    <p>&copy; 2025 Daniel Cerros. FullStack Developer Portfolio.</p>
                 </div>
                 
                 <ul class="footer-links">
+                    <li><a href="mailto:daniel@danielcerros.com">Email</a></li>
                     <li><a href="https://wa.me/50378880769" target="_blank">WhatsApp</a></li>
+                    <li><a href="https://calendly.com/cerros384" target="_blank">Schedule Call</a></li>
+                    <li><a href="https://github.com/danielcerros" target="_blank">GitHub</a></li>
                 </ul>
             </div>
         </div>
@@ -640,9 +780,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
             } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
             }
         });
 
@@ -672,7 +812,7 @@
         // Add click tracking for analytics (if needed)
         document.querySelectorAll('.package-cta').forEach(btn => {
             btn.addEventListener('click', function() {
-                console.log('Package CTA clicked:', this.textContent.trim());
+                console.log('Project CTA clicked:', this.textContent.trim());
                 console.log('Link href:', this.href);
             });
         });
